@@ -12,6 +12,17 @@ class Bookmark < Sinatra::Base
     erb :'links/index'
   end
 
+  get '/links/new' do
+    erb :'links/add'
+  end
+
+  post '/links' do
+    Link.create(name: params[:page_name], tag: params[:page_tag], url: params[:page_url])
+    redirect to('/links')
+  end
+
+
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
