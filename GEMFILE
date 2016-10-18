@@ -4,12 +4,12 @@ ruby '2.3.0'
 
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'capybara'
 gem 'sinatra'
-gem 'rspec'
-gem 'rspec-sinatra'
 gem 'dm-transactions'
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec'
+  gem 'rspec-sinatra'
 end
