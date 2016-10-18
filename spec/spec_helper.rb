@@ -2,6 +2,9 @@
 
 ENV['RACK_ENV'] = 'test'
 
+require 'data_mapper'
+require 'dm-postgres-adapter'
+
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara'
@@ -41,6 +44,9 @@ RSpec.configure do |config|
     # ...rather than:
     #   # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+    DataMapper.setup(:default, "postgres://localhost/bookmark_manager")
+    DataMapper.finalize
+    DataMapper.auto_upgrade!
   end
 
   # rspec-mocks config goes here. You can use an alternate test double
