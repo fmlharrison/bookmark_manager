@@ -1,0 +1,25 @@
+<html>
+
+<head>
+
+  <title>Makers Bookmark Manager</title>
+
+</head>
+
+<body>
+
+  <h1> Your saved bookmarks</h1>
+
+  <ul id='links'>
+    <% @links.each do |link| %>
+      <li>
+        Name: <%= link.name %>
+        Tag: <%= link.tag %>
+        URL: <%= link.url %>
+      </li>
+    <% end %>
+  </ul>
+
+</body>
+
+</html>

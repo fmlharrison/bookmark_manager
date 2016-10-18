@@ -10,7 +10,7 @@ feature "Bookmarks" do
 
     expect(page.status_code).to eq 200
 
-    within 'ul#bookmarks' do
+    within 'ul#links' do
       expect(page).to have_content("Vegan Recipe Club")
     end
   end
