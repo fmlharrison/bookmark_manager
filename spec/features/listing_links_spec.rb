@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 feature "Bookmarks" do
+
   scenario "viewing a list of links" do
-    Bookmarks.create(name: "Vegan Recipe Club", tag: "Vegan", url: "http://wwww.veganrecipeclub.org.uk")
-    visit '/bookmarks'
+
+    Link.create(name: "Vegan Recipe Club", tag: "Vegan", url: "http://wwww.veganrecipeclub.org.uk")
+
+    visit '/links'
+
     expect(page.status_code).to eq 200
 
     within 'ul#bookmarks' do
